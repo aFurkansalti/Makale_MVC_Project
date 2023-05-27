@@ -1,0 +1,66 @@
+﻿@using MakaleEntities
+@using _01_PROJE_MVC.Models
+@model List<Yorum>
+
+@{
+    Kullanici kullanici = SessionUser.Login;
+}
+
+@foreach (var item in Model)
+{
+
+    <div class="media">
+        <div class="media-left media-middle">
+            <div class="media-object">
+                <span class="glyphicon glyphicon-comment"></span>
+            </div>
+        </div>
+        <div class="media-body">
+            <div>
+                <span class="col-md-10" contenteditable="false" id="yorum_@item.ID">@item.Text</span>  @*true yaparsan span textbox'a dönüşür*@
+                @if (kullanici != null && kullanici.ID == item.Kullanici.ID)
+                {
+                    <span class="col-md-2 text-right">
+                        <button type="button" class="btn btn-warning btn-xs" data-editmod="false" onclick="islemyap(this, 'update', @item.ID, '#yorum_@item.ID')">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                        <button type="button" class="btn btn-warning btn-xs" onclick="islemyap(this, 'delete', @item.ID)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </span>
+                }
+                <small class="col-md-12 text-right">
+                    <span class="glyphicon glyphicon-user"></span> @item.Kullanici.KullaniciAdi
+                    <span class="glyphicon glyphicon-user"></span> @item.DegistirmeTarihi
+                </small>
+            </div>
+        </div>
+    </div>
+}
+
+@if (kullanici != null)
+{
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" id="yorum_text" class="form-control" placeholder="Yorumumuz...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" onclick="islemyap(this, 'insert');">Gönder</button>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+    
+}
+

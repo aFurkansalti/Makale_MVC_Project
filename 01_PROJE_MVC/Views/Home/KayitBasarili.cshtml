@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "KayitBasarili";
+}
+
+@using MakaleEntities.viewmodel
+@model loginModel
+
+@using (Html.BeginForm())
+{
+    <section class="login-info">
+        <div class="container">
+            <div class="row main">
+                <div class="form-header">
+                    <h1 class="btn-group-lg"><span class="glyphicon glyphicon-check glyphicon-align-left glyphicon-th-large"></span></h1>
+                    <h2 class="text-center "> E-Posta Aktivasyonu Yapınız</h2>
+                </div>
+                <div class="main-content">
+
+                    <div class="input-group">
+
+                        <p>
+                            <h3><span class="glyphicon glyphicon-exclamation-sign"></span></h3>
+                            <b>Lütfen E-Posta adresinize gelen Aktivasyon Linkine tıklayarak hesabınızı aktifleştiriniz.  </b>
+                            <b>Hesabınızı aktifleştirmeden kayıt tamamlanmış olmaz...!</b>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+<script>
+
+    setTimeout(function () {
+        window.location = "/Home/Index"
+    }, 4000);
+</script>
+
+@section footer{
+    @Html.Partial("_PartialPageFooter")
+}

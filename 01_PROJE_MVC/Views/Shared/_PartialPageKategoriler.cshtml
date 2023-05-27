@@ -1,0 +1,19 @@
+﻿@using MakaleBLL;
+@using MakaleEntities;
+@using _01_PROJE_MVC.Models;
+    
+@{
+    List<Kategori> liste = CacheHelper.KategoriCache();
+}
+
+
+
+<p class="load"> Kategoriler </p>
+<div class="list-group">
+    <a href="/Home/Index" class="list-group-item"> <span class="glyphicon glyphicon-chevron-right"></span> Tümü</a>
+    @foreach (var item in liste)
+    {
+        <a href="/Home/Kategori/@item.ID" class="list-group-item">@item.Baslik</a>
+    }
+   
+</div>

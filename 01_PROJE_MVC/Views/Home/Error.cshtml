@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "HesapAktiflestir";
+}
+
+@using (Html.BeginForm())
+{
+    <section class="login-info">
+        <div class="container">
+            <div class="row main">
+                <div class="form-header">
+                    <h1 class="btn-group-lg"><span class="glyphicon glyphicon-check glyphicon-align-left glyphicon-th-large"></span></h1>
+                    <h2 class="text-center "> Yönlendiriliyorsunuz</h2>
+                </div>
+                <div class="main-content">
+
+                    <div class="text-success">
+                        <h2>Geçersiz İşlem</h2>
+                        <p class="text-justify">
+                            @foreach (string item in (List<string>)ViewBag.hatalar)
+                            {
+                                @item
+                                <br />
+                            }
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+<script>
+    
+    setTimeout(function () {
+        window.location = "/Home/Index"
+    }, 4000);
+</script>
+

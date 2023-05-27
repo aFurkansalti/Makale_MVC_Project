@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "HesapAktiflestir";
+}
+
+@using (Html.BeginForm())
+{
+    <section class="login-info">
+        <div class="container">
+            <div class="row main">
+                <div class="form-header">
+                    <h1 class="btn-group-lg"><span class="glyphicon glyphicon-check glyphicon-align-left glyphicon-th-large"></span></h1>
+                    <h2 class="text-center "> Yönlendiriliyorsunuz</h2>
+                </div>
+                <div class="main-content">
+
+                    <div class="input-group">
+
+                        <p>
+                            <h3><span class="glyphicon glyphicon-exclamation-sign"></span></h3>
+                            <b>Hesabınız Aktifleştirildi, Aramıza Hoş Geldiniz</b><br />
+                            <b>Artık Makale Yazma ve Yorum Yapma Aktif oldu. </b>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+<script>
+
+    setTimeout(function () {
+        window.location = "/Home/Index"
+    }, 4000);
+</script>
+
+@section footer{
+    @Html.Partial("_PartialPageFooter")
+}

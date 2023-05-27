@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Hakkimizde";
+}
+
+
+@model List<Makale>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3">
+            @Html.Partial("_PartialPageKategoriler")
+        </div>
+
+
+        <div class="col-md-7 col-md-offset-1">
+            <div class="img">
+                <img class="img-rounded" src="https://placehold.co/800x300" alt="">
+            </div>
+
+
+            <div class="row carousel-holder">
+
+                <h2>Consectetur adipiscing elit fusce vel.</h2>
+                <p>
+                    Tincidunt integer eu augue augue nunc elit dolor,
+                    luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit,
+                    vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                    Tincidunt integer eu augue augue nunc elit dolor,
+                    luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit,
+                    vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel
+                    Tincidunt integer eu augue augue nunc elit dolor,
+                    luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit,
+                    vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel
+                    Tincidunt integer eu augue augue nunc elit dolor,
+                    luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit,
+                    vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                    Tincidunt integer eu augue augue nunc elit dolor,
+                    luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit,
+                    vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel
+                    Tincidunt integer eu augue augue nunc elit dolor,
+                    luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit,
+                    vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+@section footer{
+    @Html.Partial("_PartialPageFooter")
+}
